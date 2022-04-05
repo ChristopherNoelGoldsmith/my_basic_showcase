@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous" defer></script>
+        <script src="app.js" defer></script>
+        <script src="bg_ani.js" defer></script>
+        <title>Musician Website</title>
+    </head>
+
+    <body>
+
+        <main id="container">
+            <canvas id="canvas"></canvas>
+            <section id="navbar" class="vert-off">
+
+                <!-- basic navbar to go to spot on page -->
+
+                <a href="#my-media" class="nav-btn">My Music</a>
+                <a href="#about-me" class="nav-btn">About Me</a>
+                <a id='contact-btn' name="contact-overlay" class="nav-btn">Contact Me</a>
+
+            </section>
+
+
+            <section id="title">
+
+                <h1>My Showcase</h1>
+
+            </section>
+
+
+            <section id="about-me" class="vis">
+
+                <!--An about me section including skills at the musician's disposal-->
+                <img src="img/face.jpg" alt="placeholder" class="horz-L">
+                <h3 class="section-title">About Me</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus quos veritatis quibusdam nemo 
+                    minus perferendis fugiat delectus, aliquid perspiciatis itaque optio! Officia numquam nihil sed, 
+                    iure et error ipsa ad quas natus asperiores cumque nulla quidem molestias odio qui delectus 
+                    distinctio voluptate? Laudantium perspiciatis inventore autem dolorem doloribus culpa placeat!</p>
+                
+            </section>
+
+
+            <section id="my-media" class="vis">
+                <h3 class="section-title">Some of my work</h3>
+                <!--iframe from spotify or soundcloud-->
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1214582812&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                <div
+                    style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; 
+                    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a href="https://soundcloud.com/user-133605392" title="api_test_702" target="_blank"
+                        style="color: #cccccc; text-decoration: none;">api_test_702</a> ·
+                    <a href="https://soundcloud.com/user-133605392/song" title="Song" target="_blank"
+                        style="color: #cccccc; text-decoration: none;">Song</a>
+                </div>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/J1i2lpspZTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+
+
+            <section id="contact-overlay" class="not-vis">
+                <!--Contact me box-->
+                <!--needs true https address for the form submit host once the site is hosted. See read-me.md for link-->
+                <form action="https://formsubmit.co/ab646cfa1f0e37e7263efc432c032001" class="contact-me" method="POST">
+
+                    <!--Honeypot to capture web scraping-->
+                    <input type="text" name="_honey" style="display: none">
+
+                    <!--Disable Captcha-->
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <!--Auto Response-->
+                    <input type="hidden" name="_autoresponse"
+                        value="Thank you for your contacting me! I will respond as soon as possiable.">
+
+
+                    <h2>Contact Me</h2>
+                    <figure class="contact-inputs" for='subject'>
+                        <h3>Subject</h3>
+                        <input type="text" name="_subject" id="subject" required>
+                    </figure>
+                    <figure class="contact-inputs" for='name'>
+                        <h3>Name</h3>
+                        <input type="text" name="name" id="contact-name" required>
+                    </figure>
+                    <figure class="contact-inputs" for='email'>
+                        <h3>Email Address</h3>
+                        <input type="email" name="email" id="email" required>
+                    </figure>
+                    <figure class="contact-inputs" for='phone'>
+                        <h3>Phone Number</h3>
+                        <input type="number" name="Phone&nbsp;Number" id="phone" placeholder="555-555-5555">
+                    </figure>
+                    <textarea name="Message" id="contact-me-text" cols="30" rows="10" required></textarea>
+                    <input class='btn' id='submit' type="submit" value="SUBMIT">
+                </form>
+            </section>
+
+        </main>
+
+    </body>
+
+</html>

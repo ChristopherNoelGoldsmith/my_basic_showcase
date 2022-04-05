@@ -1,0 +1,191 @@
+@use 'sass:math';
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+$text-color: seashell;
+$box-color: rgba(0, 0, 0, 0.5);
+$hover-focus-color: aquamarine;
+$nav-font: 2.5vw;
+
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+//DOM interactive classes
+.not-vis {
+  width: 0%;
+  opacity: 0;
+  transition: width, 0.5s;
+  transition: opacity, 0.5s;
+}
+.vis {
+  width: 100vw;
+  transition: width, 0.5s;
+}
+.vert-on {
+  transition: top, 1s;
+  top: 0;
+}
+.vert-off {
+  top: -500vh;
+}
+.horz-L {
+  right: -500vh;
+  transition: right, 1s;
+}
+
+//
+.section-title {
+  text-align: center;
+  font-size: 3vw;
+  margin: 5px 0 2vh 0;
+}
+
+
+//
+body {
+  font-family: $font-stack;
+  color: $text-color;
+}
+
+canvas#canvas {
+  display: block;
+  z-index: -1;
+  position: fixed;
+  background: darkslategrey;
+  filter: blur(1px);
+  background-attachment: fixed;
+  background-size: fill;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+//
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $box-color;
+
+  > * {
+    margin: 0px 0px 15px 0px;
+  }
+
+  //navbar css
+  #navbar {
+    background-color: transparent;
+    z-index: 2;
+    font-weight: bold;
+    position: fixed;
+    display: flex;
+    flex-grow: 1;
+    align-items: stretch;
+    justify-content: center;
+    overflow-y: hidden;
+    a {
+      margin: 0 3% 0 3%;
+      padding: 3vh 3vw 7vh 3vw;
+      text-align: center;
+      font-size: $nav-font;
+      width: 30vw;
+      height: 3vh;
+      text-decoration: none;
+      color: $text-color;
+      background-color: transparent;
+      overflow-y: hidden;
+    }
+    a:hover,
+    a:focus {
+      color: $hover-focus-color;
+    }
+    a:hover {
+      transform: scale(1.1);
+    }
+  }
+  //title css
+  #title {
+    height: 100vh;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 5vh;
+    h1 {
+      margin-top: 40vh;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: black;
+    }
+  }
+  //about me section css
+  #about-me {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    img {
+      max-height: 50vh;
+      border: 2px black solid;
+      margin-bottom: 5vh;
+    }
+  }
+  //music player and youtube section
+  #my-media {
+    margin-top: 20vh;
+    height: 80vh;
+    overflow: hidden;
+  }
+}
+
+//section for the contact me form
+#contact-overlay {
+  height: 100vh;
+  background-color: rgba(50, 50, 50, 0.9);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  position: fixed;
+  margin: 0;
+  overflow: hidden;
+}
+.contact-me {
+  background-color: rgba(50, 50, 50, 0.8);
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+  margin: 10vh auto auto auto;
+}
+.contact-me h2 {
+  background: rgba(50, 50, 50, 0.8);
+  padding: 2vh 0 2vh 0;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.contact-inputs {
+  margin: 2px 0 2px 0;
+  font-size: 0.5vh;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.contact-inputs input {
+  width: 100%;
+}
+textarea {
+  width: 90%;
+  height: 20vh;
+  margin: 2vh;
+}
+#submit {
+  font-size: 2vh;
+  font-weight: bold;
+  padding: 1vh;
+  height: 30%;
+  width: 90%;
+  margin: 0 0 2vh 0;
+}
